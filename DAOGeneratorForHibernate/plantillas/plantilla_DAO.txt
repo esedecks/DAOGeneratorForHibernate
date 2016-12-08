@@ -1,0 +1,19 @@
+package root.DAO;
+
+import java.util.List;
+
+import paquete.###;
+
+public interface ###DAO {
+
+	public void save(### $$$) throws Exception;
+
+	public void update(### $$$) throws Exception;
+
+	public void delete(### $$$) throws Exception;
+
+	public List<###> getAll() throws Exception;
+
+	public ### getById(### $$$) throws Exception;
+
+}

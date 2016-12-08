@@ -1,0 +1,63 @@
+package root.DAOImpl;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import root.DAO.###DAO;
+import root.Persistence.HibernateUtil;
+import paquete.###;
+
+import java.util.ArrayList;
+
+public class ###DAOImpl implements ###DAO {
+
+	@Override
+	public void save(### $$$) throws Exception {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		session.save($$$);
+		tx.commit();
+		session.close();
+	}
+
+	@Override
+	public void update(### $$$) throws Exception {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		session.update($$$);
+		tx.commit();
+		session.close();
+
+	}
+
+	@Override
+	public void delete(### $$$) throws Exception {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		session.delete($$$);
+		tx.commit();
+		session.close();
+	}
+
+	@Override
+	public List<###> getAll() throws Exception {
+		List<###> ###sList = new ArrayList<>();
+		List<?> objectList = new ArrayList<>();
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		objectList = session.createCriteria(###.class).list();
+		for (Object ob : objectList) {
+			if (ob instanceof ###) {
+				###sList.add((###) ob);
+			}
+		}
+		return ###sList;
+	}
+
+	@Override
+	public ### getById(### $$$) throws Exception {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		return (###) session.get(###.class, $$$.getId###());
+	}
+}
