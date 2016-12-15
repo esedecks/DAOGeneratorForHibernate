@@ -7,8 +7,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class DAOGenerator {
 
@@ -35,8 +33,8 @@ public class DAOGenerator {
         int exitosos = 0;
         // Crear los directorios
         String root = directorio.getParent();
-        String RutaDAO = root + "\\DAO";
-        String RutaDAOImpl = root + "\\DAOImpl";
+        String RutaDAO = root + "/DAO";
+        String RutaDAOImpl = root + "/DAOImpl";
         File dirDAO = new File(RutaDAO);
         dirDAO.mkdirs();
         File dirDAOImpl = new File(RutaDAOImpl);
@@ -46,8 +44,8 @@ public class DAOGenerator {
                 String nombre = archivo.getName();
                 nombre = nombre.substring(0, nombre.indexOf("."));
                 String nombreObjeto = nombre.substring(0, 1).toLowerCase() + nombre.substring(1);
-                PrintWriter pwDao = new PrintWriter(RutaDAO + "\\" + nombre + "DAO.java");
-                PrintWriter pwDaoImpl = new PrintWriter(RutaDAOImpl + "\\" + nombre + "DAOImpl.java");
+                PrintWriter pwDao = new PrintWriter(RutaDAO + "/" + nombre + "DAO.java");
+                PrintWriter pwDaoImpl = new PrintWriter(RutaDAOImpl + "/" + nombre + "DAOImpl.java");
                 pwDao.print(prepararDao(nombre, nombreObjeto));
                 pwDaoImpl.print(prepararDaoImpl(nombre, nombreObjeto));
                 pwDao.close();

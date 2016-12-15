@@ -3,7 +3,6 @@ Cargar las plantillas
  */
 package com.trillas.controlador;
 
-import com.trillas.vista.IGPrincipal;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -17,7 +16,7 @@ public class CargarPlantillas {
     public String hacerDao() {
         platillaDAO = "";
         try {
-            File pd = new File("plantillas\\plantilla_DAO.txt");
+            File pd = new File("plantillas/plantilla_DAO.txt");
             Scanner s = new Scanner(pd);
             while (s.hasNextLine()) {
                 platillaDAO += s.nextLine() + "\n";
@@ -36,7 +35,7 @@ public class CargarPlantillas {
     public String hacerDaoImpl() {
         plantillaDAOImpl = "";
         try {
-            File pdi = new File("plantillas\\plantilla_DAOImpl.txt");
+            File pdi = new File("plantillas/plantilla_DAOImpl.txt");
             Scanner s = new Scanner(pdi);
             while (s.hasNextLine()) {
                 plantillaDAOImpl += s.nextLine() + "\n";

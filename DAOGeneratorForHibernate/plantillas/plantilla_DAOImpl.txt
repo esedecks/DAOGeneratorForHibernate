@@ -52,12 +52,15 @@ public class ###DAOImpl implements ###DAO {
 				###sList.add((###) ob);
 			}
 		}
+		session.close();
 		return ###sList;
 	}
 
 	@Override
 	public ### getById(### $$$) throws Exception {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		return (###) session.get(###.class, $$$.getId###());
+		$$$ = (###) session.get(###.class, $$$.getId###());
+		session.close();
+		return $$$;
 	}
 }
