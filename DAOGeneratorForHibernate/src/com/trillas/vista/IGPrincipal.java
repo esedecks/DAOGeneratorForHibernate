@@ -17,6 +17,7 @@ public class IGPrincipal extends javax.swing.JFrame {
     private final Generar generar;
     private String plantillaDAO;
     private String plantillaDAOImpl;
+    private String plantillaController;
     private String paquete;
     private List<File> archivos;
     private String paqueteRoot;
@@ -52,6 +53,7 @@ public class IGPrincipal extends javax.swing.JFrame {
         etiquetaEstado = new javax.swing.JLabel();
         etiquetaDAO = new javax.swing.JLabel();
         etiquetaDAOImpl = new javax.swing.JLabel();
+        etiquetaDAO1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dao Generator by '____'");
@@ -104,9 +106,11 @@ public class IGPrincipal extends javax.swing.JFrame {
 
         etiquetaEstado.setText("No hay archivos cargados");
 
-        etiquetaDAO.setText("Package DAO");
+        etiquetaDAO.setText("PackageDAO");
 
         etiquetaDAOImpl.setText("PackageDAOImpl");
+
+        etiquetaDAO1.setText("PackageController");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,15 +125,20 @@ public class IGPrincipal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(separador))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 13, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(textoDirectorioPojos, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonDirectorioPOJOS))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonSalir)
                         .addGap(28, 28, 28)
                         .addComponent(botonGenerar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(textoPlantillas, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonDirectorioPlantillas))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -152,15 +161,14 @@ public class IGPrincipal extends javax.swing.JFrame {
                                 .addComponent(etiquetaEstado))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(etiquetaDAO)
-                                    .addComponent(etiquetaDAOImpl))))
-                        .addGap(0, 0, 0))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(textoPlantillas, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonDirectorioPlantillas)))
+                                .addComponent(etiquetaDAO))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(etiquetaDAOImpl))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(etiquetaDAO1)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -184,9 +192,11 @@ public class IGPrincipal extends javax.swing.JFrame {
                 .addComponent(textoPackageRoot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(etiquetaDAO)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(etiquetaDAOImpl)
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(etiquetaDAO1)
+                .addGap(18, 18, 18)
                 .addComponent(etiquetaPlantillas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -223,7 +233,7 @@ public class IGPrincipal extends javax.swing.JFrame {
 
     private void botonGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGenerarActionPerformed
         // Genrar los archivos
-        generar.hacer(directorio, plantillaDAO, plantillaDAOImpl, archivos, paquete, paqueteRoot);
+        generar.hacer(directorio, plantillaDAO, plantillaDAOImpl,plantillaController, archivos, paquete, paqueteRoot);
     }//GEN-LAST:event_botonGenerarActionPerformed
 
     private void cambiarPackage(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cambiarPackage
@@ -262,6 +272,7 @@ public class IGPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botonSalir;
     private javax.swing.JLabel etiquetaConfiguracion;
     private javax.swing.JLabel etiquetaDAO;
+    private javax.swing.JLabel etiquetaDAO1;
     private javax.swing.JLabel etiquetaDAOImpl;
     private javax.swing.JLabel etiquetaDirectorioPOJOS;
     private javax.swing.JLabel etiquetaEstado;
@@ -278,7 +289,8 @@ public class IGPrincipal extends javax.swing.JFrame {
         // Cargar plantillas
         plantillaDAO = cargarPlantillas.hacerDao();
         plantillaDAOImpl = cargarPlantillas.hacerDaoImpl();
-        if (plantillaDAO.equals("") || plantillaDAOImpl.equals("")) {
+        plantillaController = cargarPlantillas.hacerController();
+        if (plantillaDAO.equals("") || plantillaDAOImpl.equals("") || plantillaController.equals("")) {
             botonGenerar.setEnabled(false);
         }
     }

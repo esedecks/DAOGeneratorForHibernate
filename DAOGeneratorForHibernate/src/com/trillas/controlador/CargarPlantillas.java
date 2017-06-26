@@ -12,6 +12,7 @@ public class CargarPlantillas {
 
     private String platillaDAO;
     private String plantillaDAOImpl;
+    private String plantillaController;
 
     public String hacerDao() {
         platillaDAO = "";
@@ -20,10 +21,6 @@ public class CargarPlantillas {
             Scanner s = new Scanner(pd);
             while (s.hasNextLine()) {
                 platillaDAO += s.nextLine() + "\n";
-            }
-            s = new Scanner(pd);
-            while (s.hasNextLine()) {
-                plantillaDAOImpl += s.nextLine() + "\n";
             }
         } catch (FileNotFoundException ex) {
             System.err.println("Error en la lectura de las plantillas " + ex);
@@ -45,6 +42,22 @@ public class CargarPlantillas {
             JOptionPane.showMessageDialog(null, "No se encontro la plantilla de DAOImpl", "Error, archivo no encontrado", JOptionPane.ERROR_MESSAGE);
         }
         return plantillaDAOImpl;
+    }
+    
+    
+    public String hacerController() {
+        plantillaController = "";
+        try {
+            File pdi = new File("plantillas/plantilla_Controller.txt");
+            Scanner s = new Scanner(pdi);
+            while (s.hasNextLine()) {
+                plantillaController += s.nextLine() + "\n";
+            }
+        } catch (FileNotFoundException ex) {
+            System.err.println("Error en la lectura de las plantillas " + ex);
+            JOptionPane.showMessageDialog(null, "No se encontro la plantilla de Controller", "Error, archivo no encontrado", JOptionPane.ERROR_MESSAGE);
+        }
+        return plantillaController;
     }
 
 }

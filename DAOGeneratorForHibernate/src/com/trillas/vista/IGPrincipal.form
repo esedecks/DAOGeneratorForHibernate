@@ -36,9 +36,9 @@
                       <Component id="separador" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="textoDirectorioPojos" min="-2" pref="279" max="-2" attributes="0"/>
-                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="botonDirectorioPOJOS" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -46,6 +46,12 @@
                       <Component id="botonSalir" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="botonGenerar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="textoPlantillas" min="-2" pref="272" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="botonDirectorioPlantillas" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -75,19 +81,18 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="etiquetaDAO" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="etiquetaDAOImpl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="etiquetaDAO" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="etiquetaDAOImpl" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="etiquetaDAO1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="textoPlantillas" min="-2" pref="272" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="botonDirectorioPlantillas" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -116,9 +121,11 @@
               <Component id="textoPackageRoot" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="etiquetaDAO" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="etiquetaDAOImpl" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="etiquetaDAO1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="etiquetaPlantillas" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -223,12 +230,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="etiquetaDAO">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Package DAO"/>
+        <Property name="text" type="java.lang.String" value="PackageDAO"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="etiquetaDAOImpl">
       <Properties>
         <Property name="text" type="java.lang.String" value="PackageDAOImpl"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="etiquetaDAO1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="PackageController"/>
       </Properties>
     </Component>
   </SubComponents>

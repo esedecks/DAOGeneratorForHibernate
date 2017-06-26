@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class Generar {
 
-    public void hacer(File directorio, String plantillaDAO, String plantillaDAOImp, List<File> archivos, String paquete, String paqueteRoot) {
+    public void hacer(File directorio, String plantillaDAO, String plantillaDAOImp, String plantillaController, List<File> archivos, String paquete, String paqueteRoot) {
         if(archivos.isEmpty()){
             JOptionPane.showMessageDialog(null, "No hay cargado ningun archivo para generar", "Ningun Archivo", JOptionPane.ERROR_MESSAGE);
             return;
@@ -20,7 +20,7 @@ public class Generar {
             return;
         }
         // Pasarlo parametros para el genrador
-        DAOGenerator generator = new DAOGenerator(directorio,plantillaDAO,plantillaDAOImp,archivos,paqueteRoot,paquete);
+        DAOGenerator generator = new DAOGenerator(directorio,plantillaDAO,plantillaDAOImp,plantillaController,archivos,paqueteRoot,paquete);
         int exitosos = generator.crearDAOS();
         // root,directorio,plantillas,archivos
         JOptionPane.showMessageDialog(null, "Total de archvos exitosos: " + exitosos);
